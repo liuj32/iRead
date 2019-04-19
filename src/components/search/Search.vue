@@ -111,15 +111,17 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-
  .search{
+     a{   
+          color: #333!important;
+    } 
+    
      display: flex;
      flex-direction: column;
       width:100vw;
-       height: 100vh;
+      
         .box {
             flex: 1;
-            border: 1px solid yellow;
             .content {
             word-wrap: break-word;
             word-break: break-all;

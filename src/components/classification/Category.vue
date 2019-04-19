@@ -12,18 +12,18 @@
          <Loading v-show="isLoading"></Loading>
          <div>
             <ul class="minor type">
-                <li v-for="(value,key) in type" @click="getBook(key,null)">{{value}}</li>
+                <li  v-for="(value,key) in type" :class="{active: currentType==key}" @click="getBook(key,null)">{{value}}</li>
             </ul>
             <ul class="minor">
                 <li>全部</li>
-                <li v-for="item in minorArr" @click="getBook(null,item)">{{item}}</li>
+                <li v-for="item in minorArr" :class="{active: currentMinor==item}" @click="getBook(null,item)">{{item}}</li>
             </ul>
             <ul class="content" v-if="!isLoading">
                 <li v-for="item in bookList">
                     <router-link :to="{path:`/detail/${item._id}`}">
                         <div class="item">
                             <div class="img">
-                                <img :src="item.cover| parseImg" alt="">
+                                <img :src="item.cover| parseImg" @error="loadImage($event)">
                             </div>
                             <div class="info">
                                 <p class="title">{{item.title}}</p>
@@ -65,20 +65,15 @@ export default {
       minorArr: [],
       bookList: [],
       typeItem: "hot",
-      minorItem: ""
+      minorItem: "",
+      currentType:"hot",
+      currentMinor:"",
     };
   },
   created() {
     this.gender = this.$route.query.gender;
     this.major = this.$route.query.major;
-    if (ls.getItem("minor")) {
-      this.minor = ls.getItem("minor");
-    } else {
-      this.getMinorData();
-    }
-    console.log(this.minor);
-    this.getMinor();
-    this.getBook();
+       this.init();
   },
 
   filters: {
@@ -92,7 +87,22 @@ export default {
     SearchedList
   },
   methods: {
+    async init(){
+      if (ls.getItem("minor")) {
+        this.minor = ls.getItem("minor");
+      } else {
+       await this.getMinorData();
+      }
+      console.log(this.minor);
+      this.getMinor();
+      this.getBook();
+    },
+    loadImage(e){
+      this.common.defaultImage(e)
+    },
     getBook(typeArg, minorArg) {
+      this.currentType = typeArg || this.currentType
+      this.currentMinor = minorArg || this.currentMinor
       this.isLoading = true;
       let sex = this.changeType();
       this.typeItem = typeArg || this.typeItem;
@@ -111,8 +121,8 @@ export default {
     goBack() {
       this.$router.go(-1);
     },
-    getMinorData() {
-      this.$axios(`/api/cats/lv2`).then(res => {
+    async getMinorData() {
+      await this.$axios(`/api/cats/lv2`).then(res => {
         this.minor = res.data;
         this.saveMinor();
       });
@@ -166,6 +176,11 @@ export default {
       margin-right: 2vw;
       display: inline;
     }
+    .active{
+         padding: 0.5vw 2vw;border: 1px solid #26a2ff;
+         border-radius:5px; 
+          background-color: #26a2ff;
+    }
   }
   .content {
     overflow-y: scroll;
@@ -195,6 +210,7 @@ export default {
         padding-top: 1vh;
         .title {
           font-size: 15px;
+          color: #333!important;
         }
         .author {
           font-size: 12px;
@@ -208,7 +224,9 @@ export default {
           display: -webkit-box;
           -webkit-line-clamp: 2;
           line-clamp: 2;
-          -webkit-box-orient: vertical;
+        /* ! autoprefixer: off */  
+        -webkit-box-orient: vertical; 
+        /* autoprefixer: on */
         }
         .popularity {
           font-size: 7px;

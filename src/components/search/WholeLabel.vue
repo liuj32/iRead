@@ -63,7 +63,8 @@ export default {
           height: 10vw;
           line-height: 10vw;
           font-size: 4vw;
-          color:red;
+          color:#fff;
+          background-color: #26a2ff;
          .iconfont{
              font-size: 7vw;
              font-weight: bold;
@@ -87,6 +88,7 @@ export default {
               }
               a{
                   text-decoration: none;
+                  color: #666;
               }
           }
       }

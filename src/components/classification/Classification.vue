@@ -88,6 +88,7 @@ export default {
     ul {
       li {
         padding-top: 3vh;
+        a{color: #999;}
       }
     }
   }

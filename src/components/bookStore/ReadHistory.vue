@@ -4,7 +4,7 @@
             <div class="header" slot="commHeader">
                 <div class="back" @click="goBack"><i class="iconfont  icon-back"></i></div>
                 <div class="text">&nbsp;&nbsp;阅读历史</div>
-                <div class="clear">清除</div>
+                <div class="clear" @click="deleteHistory">清除</div>
             </div>
         </CommHeader>
          <ul class="content">
@@ -32,16 +32,11 @@ export default {
      name:'ReadHistory',
      data(){
          return{
-            historyBooks:[],
-            time:''
+            historyBooks:{},
          }
      },
      created(){
-        this.time = this.$currentTime()
-        let oRead = ls.getItem("read_info")
-            for(let item in oRead ){
-                this.historyBooks.push(oRead[item])
-            }
+        this.historyBooks = ls.getItem("read_info")
      },
      filters:{
         parseImg(img){
@@ -56,6 +51,11 @@ export default {
      methods:{
        goBack(){
            this.$router.go(-1)
+       },
+       deleteHistory(){
+           this.historyBooks = {}
+           ls.setItem("read_info",{})
+          
        }
 
      }

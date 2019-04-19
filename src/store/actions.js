@@ -47,5 +47,8 @@ export default {
    },
    setBgColor({commit},value){
       commit(types.BG_COLOR,value)
-   },     
+   },    
+   menuItem({commit},value) {
+      commit(types.MENU_ITEM,value)
+   }
 }

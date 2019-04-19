@@ -99,7 +99,7 @@ li{
             flex: 0 0 25%;
           }
           .active{
-               border-bottom: 1px solid red;
+               border-bottom: 2px solid #26a2ff;
           }
      }
      .ranking{

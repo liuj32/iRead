@@ -16,9 +16,9 @@ export default {
           width: 100vw;
           height: 5.5vh;
           line-height: 5.5vh;
-          border: 1px solid red;
+          background-color: #26a2ff;
           position: fixed;
-          color: red;
+          color: #fff;
           left: 0;
           top: 0;
           .iconfont{

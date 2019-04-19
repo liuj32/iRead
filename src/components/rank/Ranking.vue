@@ -118,8 +118,7 @@ export default {
        flex:0 0 33.3%;
      }
      .active{
-       
-       border-bottom: 1px solid red;
+       border-bottom: 2px solid #26a2ff;
      }
    }
   .content {
@@ -150,6 +149,7 @@ export default {
         padding-top: 1vh;
         .title {
           font-size: 15px;
+          color: #333!important;
         }
         .author {
           font-size: 12px;
@@ -163,7 +163,9 @@ export default {
           display: -webkit-box;
           -webkit-line-clamp: 2;
           line-clamp: 2;
-          -webkit-box-orient: vertical;
+        /* ! autoprefixer: off */  
+        -webkit-box-orient: vertical; 
+        /* autoprefixer: on */
         }
         .popularity {
           font-size: 7px;

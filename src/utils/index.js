@@ -23,12 +23,17 @@ function conversionTime(time){
 }
 
 export  default {
- 
   install(Vue){
       Vue.component('Loading',LoadingComponent)
       Vue.currentTime = conversionTime
       Vue.prototype.$currentTime = conversionTime
       Vue.prototype.$staticPath="http://statics.zhuishushenqi.com"
+      Vue.prototype.common = {
+        defaultImage(e) {
+          e.target.src = 'http://www.zwdu.com/files/article/image/20/20962/20962s.jpg'
+        },
+      }      
+
   }   
 }
 

@@ -8,7 +8,7 @@
                 <img style="width:80%;" :src="item.cover |  decodeUrl">
             </div>
             <div class="item-right">
-                <div style="font-size:3.6vw;">{{item.title}}</div>
+                <div class="title" style="font-size:3.6vw;">{{item.title}}</div>
                 <div class="intro">{{item.shortIntro}}</div>
                 <div class="text">
                     <span class="author">
@@ -55,6 +55,9 @@ export default {
   text-decoration: none;
   padding: 4vw;
   border-bottom: 1px solid #e4e4e4;
+  .title{
+        color: #333!important;
+  }
   .item-image {
     width: 20vw;
     img {
@@ -73,7 +76,9 @@ export default {
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
+        /* ! autoprefixer: off */  
+        -webkit-box-orient: vertical; 
+        /* autoprefixer: on */
     }
     .text {
       font-size: 3.4vw;

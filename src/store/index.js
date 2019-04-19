@@ -22,6 +22,7 @@ const state = {
     cur_chapter:0, 
     font_size:16,
     bg_color:7,
+    menu_item:""
 }
 
 var store = new Vuex.Store({

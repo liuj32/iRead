@@ -70,7 +70,9 @@ export default {
 <style lang="less">
 .home-container {
   width: 100%;
-
+   a{
+     text-decoration: none;
+   }
   .hot-wrapper {
     text-align: left;
     .top{

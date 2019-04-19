@@ -146,7 +146,7 @@ export default {
      */
     getChapter(chaperId) {
       this.isLoading = true;
-      this.$axios(`chapter/${chaperId}`).then(res => {
+      this.$axios(`/chapter/${chaperId}`).then(res => {
         if (res.data.ok) {
           this.chapter = res.data.chapter;
           console.log(this.chapter);

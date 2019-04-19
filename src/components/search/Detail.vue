@@ -36,16 +36,16 @@
                            <p>23423</p>
                        </div>
                        <div>
-                           <p>都是对</p>
-                           <p>23423</p>
+                           <p>留存率</p>
+                           <p>23.1%</p>
                        </div>
                        <div>
-                           <p>追书人气</p>
-                           <p>23423</p>
+                           <p>人气</p>
+                           <p>2343</p>
                        </div>                                              
                    </div>
                    <div class="tag">
-                      <span v-for="(tag,index) in bookDetail.tags" :class="'tag'+(index+1)">{{tag}}</span>
+                      <span v-for="(tag,index) in bookDetail.tags" :class="'tag'+((index+1)%3)">{{tag}}</span>
                       <span class="tag2">{{bookDetail.majorCate}}</span><span class="tag4">{{bookDetail.minorCateV2}}</span>
                    </div>
                    <div class="intro">
@@ -170,7 +170,7 @@ export default {
 
     height: 40px;
     line-height: 40px;
-    background:linear-gradient(90deg, rgb(231, 86, 142), #ff696b);
+    background-color: #26a2ff;
     color: #fff;
     .back{
        position: absolute;
@@ -221,7 +221,8 @@ export default {
               display: inline-block;
               width: 30vw;
               height: 7vw;
-              background:linear-gradient(90deg, rgb(231, 86, 142), #ff696b);
+              background-color: #26a2ff;
+              color: #fff;
           }
           .addUpdated{margin-right: 8vw;}
       }
@@ -237,18 +238,24 @@ export default {
           padding:0 2vw;
           display: flex;
           flex-wrap: wrap;
-          span{padding: 0.3vw 2vw; height: 6vw;border: 1px solid red;display: inline-block;
+          span{
+            padding: 0.3vw 2vw; height: 6vw;
+            display: inline-block;
             margin-left: 3vw;margin-bottom: 3vw;
+            border-radius: 2vw;
           }
-          .tag1{background: rgb(222, 185, 135)}
-          .tag2{background: rgb(95, 158, 150)}
-          .tag3{background: rgb(130, 110, 15)}
-          .tag4{background: rgb(225, 120, 85)}
-          .tag5{background: rgb(100, 150, 240)}
+         .tag0{background: rgb(225, 120, 85);border:1px solid rgb(225, 120, 85)}          
+          .tag1{background: rgb(222, 185, 135);border:1px solid rgb(222, 185, 135); }
+          .tag2{background: rgb(95, 158, 150);border:1px solid rgb(95, 158, 150)}
+          .tag3{background: rgb(130, 110, 15);border:1px solid rgb(130, 110, 15)}
+          .tag4{background: rgb(225, 120, 85);border:1px solid rgb(225, 120, 85)}
+          .tag5{background: rgb(100, 150, 240);border:1px solid rgb(100, 150, 240)}
       }
       .intro{
+          text-indent: 8vw;
           padding: 2vw;
           text-align: left;
+          color: #888;
 
       }
     }

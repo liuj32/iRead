@@ -48,6 +48,7 @@ import Search from '@/components/search/Search'
 import Rank from '@/components/rank/Rank'
 import Classification from '@/components/classification/Classification'
 import ls from '@/utils/sessionStorage'
+import {mapState} from 'vuex'
 
 export default {
      name:'',
@@ -65,15 +66,25 @@ export default {
      watch:{
         selected(val,old){
             ls.setItem("selected",val)
+        },
+        menu_item(val,old){
+          if(val){
+            this.$store.dispatch("menuItem","")
+            this.selected = val
+            ls.setItem("selected",val)
+          }
         }
      },
      components:{
          BookStore, Search, Rank, Classification,
      },
+     computed:{
+        ...mapState([
+          "menu_item"
+          ])
+     },
      methods:{
-        changeIndex(id) {
-        this.now_menu = id;
-        }
+
 
      }
 }
@@ -88,12 +99,6 @@ export default {
 }
  .mint-tab-item {
    padding: 3px 0;
- }
- .mint-tab-item-icon {
-   height: auto;
- }
- .mint-header{
-   background: #da2626;
  }
 </style>
 

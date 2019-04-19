@@ -38,8 +38,8 @@ export default new Router({
     },      
     {
       path: '/ranking/',
-      name: 'category',
+      name: 'ranking',
       component: ()=> import("@/components/rank/Ranking")
-    },     
-  ]
+    },   
+  ] 
 })

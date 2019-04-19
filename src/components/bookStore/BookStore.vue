@@ -24,7 +24,7 @@
             </li>
         </ul>
          
-         <div class="addBook">
+         <div class="addBook" @click="jumpSearch">
             <div class="img"><i class="iconfont icon-add"></i></div>
             <div class="info">添加你喜欢的小说</div>
          </div>
@@ -53,6 +53,9 @@ export default {
   methods: {
     goHistory(){
       this.$router.push({path:'/history'})
+    },
+    jumpSearch(){
+      this.$store.dispatch("menuItem","搜索")
     }
   },
 };
@@ -68,7 +71,7 @@ export default {
     height: 40px;
     line-height: 40px;
     box-sizing: border-box;
-    background: rgb(218, 38, 38);
+    background: rgb(38, 162, 255);
     display: flex;
     padding-left: 5vw;
     padding-right: 3vw;

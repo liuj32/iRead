@@ -56,5 +56,7 @@ export default {
     [types.BG_COLOR](state,value){
         state.bg_color = value
     } ,      
-       
+    [types.MENU_ITEM](state,value){
+        state.menu_item = value
+    } ,        
 }
