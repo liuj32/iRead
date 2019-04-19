@@ -24,7 +24,6 @@ npm run build
 [在线预览地址](http://106.15.202.184:81)
 
 手机扫码：
-https://github.com/A-boy-lj/iRead/blob/master/screenshots/1555670369.png
 <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/1555670369.png?raw=true" width="100"/>
 
 ## 实现功能
@@ -40,8 +39,7 @@ https://github.com/A-boy-lj/iRead/blob/master/screenshots/1555670369.png
 
 ## 屏幕截图
 
-<img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/@~ZL9TBJSK5(R285FL]EEIP.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/[~{84KQYGH@R5}6`(~~2PKE.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/_%D2S5EBEXDTR9~E[(5GK3Y.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/1DNE4)N2TQZ5`]ZJ[91HTVV.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/3B1@J%RBY8[]}EAVMEUJH4I.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/H9(%][7FR(A$FR0P7%YJ_R1.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/IAT{1EZCO{WUBFGS06WSQ2M.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/LMYCA9E0$OSBU)W%YFF57(6.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/T59%~_3PF@@U76NX{L35}64.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/TGV3`TUUA]BRSOH~AE_Y(L4.png?raw=true" width="280"/>
-
+<img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/@~ZL9TBJSK5(R285FL]EEIP.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/[~{84KQYGH@R5}6`(~~2PKE.png?raw=true" width="280"/> 
 ## 问题
 记录在项目中遇到的一些问题，和解决方法
  -  -webkit-box-orient: vertical;在webpack编译后无效
