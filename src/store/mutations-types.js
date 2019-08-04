@@ -18,4 +18,5 @@ export const CURCHAPTER = 'CURCHAPTER'
 export const FONT_SIZE = 'FONT_SIZE'
 export const BG_COLOR = 'BG_COLOR'
 export const MENU_ITEM = 'MENU_ITEM'
+export const SET_BOOKLIST = 'SET_BOOKLIST'
 

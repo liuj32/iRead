@@ -39,18 +39,20 @@ npm run build
 
 ## 屏幕截图
 
-<img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/1.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/2.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/3.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/4.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/5.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/6.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/7.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/8.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/9.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/10.png?raw=true" width="280"/> 
+<img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/1.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/2.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/3.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/4.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/5.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/6.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/7.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/8.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/9.png?raw=true" width="280"/> <img src="https://github.com/A-boy-lj/iRead/blob/master/screenshots/10.png?raw=true" width="280"/>
 ## 问题
 记录在项目中遇到的一些问题，和解决方法
- -  -webkit-box-orient: vertical;在webpack编译后无效
+1. -  -webkit-box-orient: vertical;在webpack编译后无效
     -  后来在网上查询一番，发现可能是optimize-css-assets-webpack-plugin这个插件的问题，其实解决办法很简单，只需要在这个属性前后加一个特殊注释即可。
 /*! autoprefixer: off */
  -webkit-box-orient: vertical;
 /* autoprefixer: on */
 
--  追书api虽开放了接口，但不能够跨域访问
+2.-  追书api虽开放了接口，但不能够跨域访问
     - 在访问api时需要转发，在本地调试利用了vue的proxyTable
 但这种方式仅适用于开发模式，打包后为一个静态文件，这种方式就失效了。
    -  部署到服务器我选择的是Nginx做代理转发，其实也很简单。网上很多问答都能解决这个问题。
-
-
+3.给一个容器添加overflow-y: scroll这个css属性后，scroll滚动事件失效。
+4.搜索小说时，未输入完整内容，就请求数据（节流）。做了一些优化。
+5.在实现懒加载时，由于需要获取的元素是v-for请求数据动态生成的，仅通过在mounted生命周期是获取不到的，
+需要在nextTick里面，此外获取数据最好采用async/await、promise, 否则也将获取不到元素。
